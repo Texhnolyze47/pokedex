@@ -2,87 +2,103 @@
 *Estilos generales          *
 ****************************/
 
-*{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-    text-decoration: none;
-}   
-
-:root{
-    --color-primario: #81c784;
-    --color-secundario: #5f9362;
-}
-.layout-column{
-    display: flex;
-    flex-direction: column;
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
-.layout-row{
-    display: flex;
-    flex-direction: row;
+:root {
+  --color-primario: #81c784;
+  --color-secundario: #5f9362;
+}
+.layout-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-row {
+  display: flex;
+  flex-direction: row;
+  margin-left: 0px;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.margin-body{
+    margin-right: 20px;
 }
 /****************************
  Barra de navegación     
 ****************************/
 
-
-nav h1{
-    font-family: 'Fredoka', sans-serif;
-    font-size: 25px;
-    float: right;
+nav h1 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 25px;
+  float: right;
 }
 
-nav input{
-    background-color:var(--color-secundario) ;
-    border: 0px;
-    margin-left: 10px;
-    
+nav input {
+  background-color: var(--color-secundario);
+  border: 0px;
+  margin-left: 10px;
 }
 
-nav button{
-    background-color:rgba(0, 0, 0, 0);
-    border: 0;
+nav button {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
 }
 
-
-.search-bar{
-    position: fixed;
-    align-items: center;
+.search-bar {
+  position: fixed;
+  align-items: center;
 }
 
-
-.container-navbar{
-    padding: 1% 2% 3% 2%;
-    background-color: var(--color-primario);
+.container-navbar {
+  padding: 1% 2% 3% 2%;
+  background-color: var(--color-primario);
 }
 
-.search-bar{
-    border-radius: 20px;
-    width: 14%;
-    padding: 0px;
-    background-color: var(--color-secundario);
+.search-bar {
+  border-radius: 20px;
+  width: 14%;
+  padding: 0px;
+  background-color: var(--color-secundario);
 }
 
-::placeholder{
-    color: var(--color-primario);
+::placeholder {
+  color: var(--color-primario);
+}
 
+.container-boxes{
+    display: flex;
+    justify-content: flex-end;
 }
 /****************************
  info pokemon
 ****************************/
 
-.container-info{
-    background-color: var(--color-secundario);
-    margin: 5%;
-    width: 500px;
-    height: 400px;
+.container-info {
+  background-color: var(--color-secundario);
+  margin: 5%;
+  width: 500px;
+  height: 400px;
 }
 
-.container-img{
-    background-color: var(--color-secundario);
-    margin: 5%;
-    width: 500px;
-    height: 400px;
+.container-img {
+  background-color: var(--color-secundario);
+  margin: 5%;
+  align-items: center;
+  width: 500px;
+  height: 400px;
 }
-
+table {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+}
+table td {
+  width: 50%;
+}
