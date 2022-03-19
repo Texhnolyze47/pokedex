@@ -60,7 +60,7 @@ nav button {
 
 .container-navbar {
   position: absolute;
-  padding: 1% 2% 2% 2%;
+  padding: 1% 2% 1% 2%;
   background-color: var(--color-primario);
 }
 
@@ -79,6 +79,13 @@ nav button {
     font-family: 'Montserrat', sans-serif;
 
 }
+
+/****************************
+ card pokemon
+****************************/
+
+
+
 /****************************
  info pokemon
 ****************************/
