@@ -10,7 +10,7 @@
 }
 
 :root {
-  --color-primario: #81c784;
+  --color-primario: #383f9c;
   --color-secundario: #5f9362;
 }
 .layout-column {
@@ -84,7 +84,49 @@ nav button {
  card pokemon
 ****************************/
 
+.pokemon-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  margin-top: 100px;
+}
 
+.pokemon-block {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+}
+
+.img-container {
+  background-image: url("./blob.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.pokemon-block p {
+  margin: 5px;
+  font-family: "Fredoka", sans-serif;
+  text-align: center;
+}
+
+.name {
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+#spinner {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+}
 
 /****************************
  info pokemon
@@ -97,15 +139,16 @@ nav button {
 }
 
 .container-img {
-  background-image: url("../assets/img/blob\ \(1\).svg");
-  background-repeat: no-repeat;
-  background-position: center;
+
 }
-.poke-img{
+.img-container img{
 position: relative;
 top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+left: 50%;
+transform: translate(-50%, 0%);
+background-image: url("../assets/img/blob\ \(1\).svg");
+background-repeat: no-repeat;
+background-position: center;
 }
 
 

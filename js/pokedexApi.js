@@ -28,7 +28,7 @@ const numberPokemons = (number) => {
 
 const createPokemonCard = (pokemon) => {
   const card = document.createElement('div');
-  card.classList.add('Pokemon-block');
+  card.classList.add('pokemon-block');
 
   const spriteContainer = document.createElement('div');
   spriteContainer.classList.add('img-container');

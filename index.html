@@ -15,33 +15,35 @@
     <title>Pokedex LAUNCHX</title>
   </head>
   <body>
-
-    <div class="container-navbar width-100">
-      <nav>
-        <div class="search-bar">
-          <input
-            type="text"
-            placeholder="Busca un Pokemon"
-            id="pokeName"
-            name="pokeName"
-            onchange="fetchPokemon()"
-          />
-          <button onclick="fetchPokemon()">
-            <lord-icon
-              src="https://cdn.lordicon.com/msoeawqm.json"
-              trigger="hover"
-              style="width: 32px; height: 32px"
-            >
-            </lord-icon>
-          </button>
-        </div>
-        <h1>Pokédex</h1>
-      </nav>
+    <div class="layout-column">
+      <div class="container-navbar width-100">
+        <nav>
+          <div class="search-bar">
+            <input
+              type="text"
+              placeholder="Busca un Pokemon"
+              id="pokeName"
+              name="pokeName"
+              onchange="fetchPokemon()"
+            />
+            <button onclick="fetchPokemon()">
+              <lord-icon
+                src="https://cdn.lordicon.com/msoeawqm.json"
+                trigger="hover"
+                style="width: 32px; height: 32px"
+              >
+              </lord-icon>
+            </button>
+          </div>
+          <h1>Pokédex</h1>
+        </nav>
+      </div>
+  
+      <div class="pokemon-container">
+  
+      </div>
     </div>
     
-    <div class="pokemon-container">
-
-    </div>
 
 
 
