@@ -1,3 +1,6 @@
+//const pokemonContainer = document.querySelector('')
+
+
 const fetchPokemon = () => {
   const pokeNameInput = document.getElementById("pokeName");
   let pokeName = pokeNameInput.value;
@@ -14,9 +17,11 @@ const fetchPokemon = () => {
     })
     .then((data) => {
       console.log(data);
+
       //info
       let pokeImg = data.sprites.front_default;
       let id = data.id;
+      let name = data.name;
       let height = data.height;
       let weight = data.weight;
       let abilities = data.abilities[0].ability.name;
@@ -30,11 +35,13 @@ const fetchPokemon = () => {
       let specialDefense = data.stats[4].base_stat;
       let speed = data.stats[5].base_stat;
 
-      console.log(pokeImg);
-      console.log(hp);
-      console.log(id);
-      console.log(attack);
+      // console.log(pokeImg);
+      // console.log(hp);
+      // console.log(id);
+      // console.log(attack);
+      // console.log(name);
 
+      pokeInfoName(name.toUpperCase());
       pokeImage(pokeImg);
       pokeId(id);
       pokeHeight(height);
@@ -42,7 +49,6 @@ const fetchPokemon = () => {
       pokeAbilities(abilities);
       pokeType(types);
       pokeEvo(evo);
-      infoPokemon(id);
 
       pokeVida(hp);
       pokeAtaque(attack);
@@ -50,21 +56,43 @@ const fetchPokemon = () => {
       pokeAtaqueEspecial(specialAttack);
       pokeDefensaEspecial(specialDefense);
       pokeVelocidad(speed);
-     
-
-
     });
 };
+
+function numberPokemons(number){
+  
+}
+
+function createPokemon(pokemon){
+  const card = document.createElement('div');
+  card.classList.add('Pokemon-block');
+
+  const spriteContainer = document.createElement('div');
+  spriteContainer.classList.add('img-container');
+
+  const sprite = document.createElement('img');
+  sprite.src = pokemon.sprite.front_default;
+
+  spriteContainer.appendChild(sprite);
+
+  const number = document.createElement('th');
+  number.textContent = `#${pokemon.id}`;
+
+}
+
 ////////////////////
 // pokemon info  //
 ///////////////////
+
+
+const pokeInfoName = (url) => {
+  const name = document.getElementById("nombrePokemon");
+  name.innerHTML= url;
+};
+
 const pokeImage = (url) => {
   const pokePhoto = document.getElementById("pokeImg");
   pokePhoto.src = url;
-};
-const infoPokemon = (url) => {
-  const id = document.getElementById("infoId");
-  id.innerHTML = url;
 };
 
 const pokeId = (url) => {
@@ -102,32 +130,31 @@ const pokeEvo = (url) => {
 ///////////////////
 
 const pokeVida = (url) => {
-    const vida = document.getElementById("infoVida");
-    vida.innerHTML = url;
-  };
+  const vida = document.getElementById("infoVida");
+  vida.innerHTML = url;
+};
 
-  const pokeAtaque = (url) => {
-    const ataque = document.getElementById("infoAtaque");
-    ataque.innerHTML = url;
-  };
+const pokeAtaque = (url) => {
+  const ataque = document.getElementById("infoAtaque");
+  ataque.innerHTML = url;
+};
 
-  const pokeDefensa = (url) => {
-    const defensa = document.getElementById("infoDefensa");
-    defensa.innerHTML = url;
-  };
+const pokeDefensa = (url) => {
+  const defensa = document.getElementById("infoDefensa");
+  defensa.innerHTML = url;
+};
 
+const pokeAtaqueEspecial = (url) => {
+  const ataqueEspecial = document.getElementById("infoAtaqueEspecial");
+  ataqueEspecial.innerHTML = url;
+};
 
-  const pokeAtaqueEspecial = (url) => {
-    const ataqueEspecial = document.getElementById("infoAtaqueEspecial");
-    ataqueEspecial.innerHTML = url;
-  };
+const pokeDefensaEspecial = (url) => {
+  const defensaEspecial = document.getElementById("infoDefensaEspecial");
+  defensaEspecial.innerHTML = url;
+};
 
-  const pokeDefensaEspecial = (url) => {
-    const defensaEspecial = document.getElementById("infoDefensaEspecial");
-    defensaEspecial.innerHTML = url;
-  };
-
-  const pokeVelocidad = (url) => {
-    const velocidad = document.getElementById("infoVelocidad");
-    velocidad.innerHTML = url;
-  };
+const pokeVelocidad = (url) => {
+  const velocidad = document.getElementById("infoVelocidad");
+  velocidad.innerHTML = url;
+};
