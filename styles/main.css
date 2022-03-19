@@ -60,7 +60,7 @@ nav button {
 
 .container-navbar {
   position: absolute;
-  padding: 1% 2% 1% 2%;
+  padding: 20px;
   background-color: var(--color-primario);
 }
 
