@@ -54,12 +54,13 @@ nav button {
 }
 
 .search-bar {
-  position: fixed;
+  position: absolute;
   align-items: center;
 }
 
 .container-navbar {
-  padding: 1% 2% 3% 2%;
+  position: absolute;
+  padding: 1% 2% 2% 2%;
   background-color: var(--color-primario);
 }
 
