@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&family=Montserrat&display=swap"
       rel="stylesheet"
     />
 
@@ -15,13 +15,26 @@
     <title>Pokedex LAUNCHX</title>
   </head>
   <body>
-    <div class="layout-row"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <div class="layout-row"></div>
     <div class="container-navbar">
       <nav>
         <div class="search-bar">
           <input
             type="text"
-            placeholder="Pikachu"
+            placeholder="Busca un Pokemon"
             id="pokeName"
             name="pokeName"
             onchange="fetchPokemon()"
@@ -39,10 +52,13 @@
       </nav>
     </div>
 
-    <h2>Nombre Pokemon</h2>
-    <div class="layout-row container-boxes ">
-      <div class=" margin-body layout-column">
-        <div class="  container-info layout-column">
+    <div class="layout-column title">
+      <h2 id="nombrePokemon">Nombre Pokemon</h2>
+      <h3 id="infoType"></h3>
+    </div>
+    <div class="layout-row">
+      <div class="margin-body layout-column">
+        <div class="container-info layout-column">
           <table>
             <tr>
               <th>Info</th>
@@ -74,13 +90,13 @@
           </table>
         </div>
       </div>
-      <div class=" margin-body layout-column">
-        <div class="container-info">
-          <img src="" class="width-100" id="pokeImg" alt="Imagen de pokemon" />
+      <div class="margin-body layout-column">
+        <div class="container-img container-info">
+          <img src="" class="width-100 poke-img" id="pokeImg" alt="Imagen de pokemon" />
         </div>
       </div>
-      <div class=" margin-body layout-column">
-        <div class="margin-body container-info">
+      <div class="margin-body layout-column">
+        <div class="container-info layout-column">
           <table>
             <tr>
               <th>Estadísticas</th>
@@ -113,7 +129,7 @@
         </div>
       </div>
     </div>
-  </body>
+  </body> 
   <footer>
     <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
     <script src="./js/pokedexApi.js"></script>
