@@ -1,8 +1,29 @@
-const pokemonContainer = document.querySelector('.pokemon-container');
+const pokemonContainer = document.querySelector(".pokemon-container");
+const spinner = document.querySelector("#spinner");
+const infoPokemon = document.querySelector("info-poke");
 
+const colors = {
+  fire: "#FDDFDF",
+  grass: "#DEFDE0",
+  electric: "#FCF7DE",
+  water: "#DEF3FD",
+  ground: "#f4e7da",
+  rock: "#d5d5d4",
+  fairy: "#fceaff",
+  poison: "#98d7a5",
+  bug: "#f8d5a3",
+  dragon: "#97b3e6",
+  psychic: "#eaeda1",
+  flying: "#F5F5F5",
+  fighting: "#E6E0D4",
+  normal: "#F5F5F5",
+};
+
+const main_types = Object.keys(colors);
 
 const fetchPokemon = (id) => {
- 
+  spinner.style.display = "block";
+
   const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
   fetch(url)
     .then((res) => {
@@ -16,48 +37,58 @@ const fetchPokemon = (id) => {
     .then((data) => {
       console.log(data);
       createPokemonCard(data);
+      spinner.style.display = "none";
     });
 };
 
 const numberPokemons = (number) => {
-  for(let i = 1; i <= number; i++){
+  spinner.style.display = "block";
+  for (let i = 1; i <= number; i++) {
     fetchPokemon(i);
   }
-}
-
+};
 
 const createPokemonCard = (pokemon) => {
-  const card = document.createElement('div');
-  card.classList.add('pokemon-block');
+  const card = document.createElement("div");
+  card.classList.add("pokemon-block");
 
-  const spriteContainer = document.createElement('div');
-  spriteContainer.classList.add('img-container');
+  const spriteContainer = document.createElement("div");
+  spriteContainer.classList.add("img-container");
 
-  const sprite = document.createElement('img');
+  const sprite = document.createElement("img");
   sprite.src = pokemon.sprites.front_default;
 
   spriteContainer.appendChild(sprite);
 
-  const number = document.createElement('p');
+  const number = document.createElement("p");
   number.textContent = `#${pokemon.id}`;
 
-  const name = document.createElement('p');
-  name.classList.add('name');
+  const name = document.createElement("p");
+  name.classList.add("name");
   name.textContent = pokemon.name;
+
+  const poke_types = pokemon.types.map(type => type.type.name)
+  const type = main_types.find(type => poke_types.indexOf (type) > -1)
+  const color = colors[type]
+
+  card.style.background = color;  
 
   card.appendChild(spriteContainer);
   card.appendChild(number);
   card.appendChild(name);
 
+  card.onclick = function () {
+    const backgroundPoke = document.createElement("div");
+    background.classList.add("backgroundPoke");
+  };
   pokemonContainer.appendChild(card);
-}
+};
 
 numberPokemons(9);
 
 ////////////////////
 // pokemon info  //
 ///////////////////
-
 
 // const pokeInfoName = (url) => {
 //   const name = document.getElementById("nombrePokemon");

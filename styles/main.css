@@ -10,7 +10,7 @@
 }
 
 :root {
-  --color-primario: #383f9c;
+  --color-primario: #81c784;
   --color-secundario: #5f9362;
 }
 .layout-column {
@@ -98,7 +98,6 @@ nav button {
 .pokemon-block {
   border-radius: 10px;
   padding: 10px;
-  background-color: white;
   box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
 }
 
@@ -120,17 +119,73 @@ nav button {
   font-size: 1.2rem;
 }
 
-#spinner {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
+.center {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.wave {
+  width: 5px;
+  height: 100px;
+  background: linear-gradient(45deg, #5f9362, #fff);
+  margin: 10px;
+  animation: wave 1s linear infinite;
+  border-radius: 20px;
+}
+.wave:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.wave:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.wave:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.wave:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.wave:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.wave:nth-child(7) {
+  animation-delay: 0.6s;
+}
+.wave:nth-child(8) {
+  animation-delay: 0.7s;
+}
+.wave:nth-child(9) {
+  animation-delay: 0.8s;
+}
+.wave:nth-child(10) {
+  animation-delay: 0.9s;
+}
+
+@keyframes wave {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+
 
 /****************************
  info pokemon
 ****************************/
+
+.backgroundPoke{
+  background-color: black;
+  width: 100%;
+  height: 100%;
+
+}
 
 .container-info {
   /**background-color: var(--color-secundario);**/
@@ -138,15 +193,15 @@ nav button {
   height: 400px;
 }
 
-.container-img {
 
-}
 .img-container img{
 position: relative;
 top: 50%;
 left: 50%;
 transform: translate(-50%, 0%);
-background-image: url("../assets/img/blob\ \(1\).svg");
+/*background-image: url("../assets/img/blob\ \(1\).svg");*/
+background-color: #fff;
+border-radius: 50px;
 background-repeat: no-repeat;
 background-position: center;
 }
