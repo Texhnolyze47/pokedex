@@ -84,7 +84,7 @@ const createPokemonCard = (pokemon) => {
   pokemonContainer.appendChild(card);
 };
 
-numberPokemons(9);
+numberPokemons(25);
 
 ////////////////////
 // pokemon info  //
