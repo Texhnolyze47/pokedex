@@ -1,6 +1,6 @@
 const pokemonContainer = document.querySelector(".pokemon-container");
 const spinner = document.querySelector("#spinner");
-const infoPokemon = document.querySelector("info-poke");
+const modal = document.querySelector(".modal-div")
 
 const colors = {
   fire: "#FDDFDF",
@@ -67,24 +67,68 @@ const createPokemonCard = (pokemon) => {
   name.classList.add("name");
   name.textContent = pokemon.name;
 
-  const poke_types = pokemon.types.map(type => type.type.name)
-  const type = main_types.find(type => poke_types.indexOf (type) > -1)
-  const color = colors[type]
+  const poke_types = pokemon.types.map((type) => type.type.name);
+  const type = main_types.find((type) => poke_types.indexOf(type) > -1);
+  const color = colors[type];
 
-  card.style.background = color;  
+  card.style.background = color;
 
   card.appendChild(spriteContainer);
   card.appendChild(number);
   card.appendChild(name);
-
-  card.onclick = function () {
-    const backgroundPoke = document.createElement("div");
-    background.classList.add("backgroundPoke");
-  };
   pokemonContainer.appendChild(card);
+  spriteContainer.onclick = function progressBars (stats){
+    const fondoModal = document.createElement('div');
+    fondoModal.classList.add("modal");
+
+    const infoModal = document.createElement('div');
+    infoModal.classList.add("modal-container");
+
+    fondoModal.appendChild(infoModal);
+    modal.append(fondoModal);
+  }
 };
 
-numberPokemons(25);
+
+numberPokemons(18);
+
+function progressBars(stats) {
+  const statsContainer = document.createElement("div");
+  statsContainer.classList.add("stats-container");
+
+  for (let i = 0; i < 3; i++) {
+    const stat = stats[i];
+
+    const statPercent = stat.base_stat / 2 + "%";
+    const statContainer = document.createElement("stat-container");
+    statContainer.classList.add("stat-container");
+
+    const statName = document.createElement("p");
+    statName.textContent = stat.stat.name;
+
+    const progress = document.createElement("div");
+    progress.classList.add("progress");
+
+    const progressBar = document.createElement("div");
+    progressBar.classList.add("progress-bar");
+    progressBar.setAttribute("aria-valuenow", stat.base_stat);
+    progressBar.setAttribute("aria-valuemin", 0);
+    progressBar.setAttribute("aria-valuemax", 200);
+    progressBar.style.width = statPercent;
+
+    progressBar.textContent = stat.base_stat;
+
+    progress.appendChild(progressBar);
+    statContainer.appendChild(statName);
+    statContainer.appendChild(progress);
+
+    statsContainer.appendChild(statContainer);
+  }
+
+  return statsContainer;
+}
+
+
 
 ////////////////////
 // pokemon info  //
