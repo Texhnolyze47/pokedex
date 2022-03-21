@@ -34,6 +34,9 @@ const fetchPokemon = () => {
       let specialAttack = data.stats[3].base_stat;
       let specialDefense = data.stats[4].base_stat;
       let speed = data.stats[5].base_stat;
+      let moves = data.moves.map(mov => mov.move.name);
+
+     
 
       // console.log(pokeImg);
       // console.log(hp);
@@ -56,12 +59,12 @@ const fetchPokemon = () => {
       pokeAtaqueEspecial(specialAttack);
       pokeDefensaEspecial(specialDefense);
       pokeVelocidad(speed);
+      pokeMoves(moves);
+  
+
     });
 };
 
-function numberPokemons(number){
-  
-}
 
 function createPokemon(pokemon){
   const card = document.createElement('div');
@@ -158,3 +161,11 @@ const pokeVelocidad = (url) => {
   const velocidad = document.getElementById("infoVelocidad");
   velocidad.innerHTML = url;
 };
+
+
+pokeMoves = (url) => {
+  const moves = document.getElementById("movimientos")
+  console.log(url)
+  moves.innerHTML = url;
+}
+

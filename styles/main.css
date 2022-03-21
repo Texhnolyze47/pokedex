@@ -76,6 +76,8 @@ nav button {
 
 .title{
     font-family: 'Montserrat', sans-serif;
+    margin-top: 15px;
+    margin-bottom: 15px;
 
 }
 /****************************
@@ -111,3 +113,4 @@ table  td{
 table tr td{
   width: 50%;
 }
+
