@@ -80,6 +80,7 @@ nav button {
     margin-bottom: 15px;
 
 }
+
 /****************************
  info pokemon
 ****************************/
@@ -112,5 +113,9 @@ table  td{
 }
 table tr td{
   width: 50%;
+}
+
+.table-habilidades{
+  width: 10%;
 }
 
