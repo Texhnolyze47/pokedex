@@ -36,6 +36,7 @@ const fetchPokemon = (id) => {
     })
     .then((data) => {
       console.log(data);
+
       createPokemonCard(data);
       spinner.style.display = "none";
     });
@@ -47,6 +48,7 @@ const numberPokemons = (number) => {
     fetchPokemon(i);
   }
 };
+
 
 const createPokemonCard = (pokemon) => {
   const card = document.createElement("div");
@@ -146,7 +148,6 @@ const abrirPokemon = (pokemon) => {
   return pokemonPage;
 
 }
-
 
 
 
