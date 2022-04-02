@@ -1,6 +1,6 @@
 const pokemonContainer = document.querySelector(".pokemon-container");
 const spinner = document.querySelector("#spinner");
-const modal = document.querySelector(".modal-div")
+const openModal = document.querySelector(".modal-div")
 
 const colors = {
   fire: "#FDDFDF",
@@ -77,15 +77,9 @@ const createPokemonCard = (pokemon) => {
   card.appendChild(number);
   card.appendChild(name);
   pokemonContainer.appendChild(card);
-  spriteContainer.onclick = function progressBars (stats){
-    const fondoModal = document.createElement('div');
-    fondoModal.classList.add("modal");
 
-    const infoModal = document.createElement('div');
-    infoModal.classList.add("modal-container");
-
-    fondoModal.appendChild(infoModal);
-    modal.append(fondoModal);
+  card.onclick = function ls (stats){
+    abrirPokemon(stats)
   }
 };
 
@@ -130,80 +124,29 @@ function progressBars(stats) {
 
 
 
-////////////////////
-// pokemon info  //
-///////////////////
+const abrirPokemon = (pokemon) => {
+  let pokemonPage = `
+  <div class="fondo_transparente">
+  <div class="modal">
+      <div class="modal_cerrar">
+          <span>x</span>
+      </div>
+      <div class="modal_titulo">${pokemon.name}</div>
+      <div class="modal_mensaje">
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit, nam? Minus nihil temporibus, minima reprehenderit, rem explicabo earum nemo debitis, maxime deserunt quidem. Quia odit quae voluptate nobis sit beatae!</p>
+      </div>
+      <div class="modal_botones">
+          <a href="" class="boton">COMPARTIR</a>
+          <a href="" class="boton">ACEPTAR</a>
+      </div>
+  </div>
+</div> 
 
-// const pokeInfoName = (url) => {
-//   const name = document.getElementById("nombrePokemon");
-//   name.innerHTML= url;
-// };
+  `
+  return pokemonPage;
 
-// const pokeImage = (url) => {
-//   const pokePhoto = document.getElementById("pokeImg");
-//   pokePhoto.src = url;
-// };
+}
 
-// const pokeId = (url) => {
-//   const id = document.getElementById("infoId");
-//   id.innerHTML = url;
-// };
 
-// const pokeHeight = (url) => {
-//   const height = document.getElementById("infoHeight");
-//   height.innerHTML = url;
-// };
 
-// const pokeWeight = (url) => {
-//   const weight = document.getElementById("infoWeight");
-//   weight.innerHTML = url;
-// };
 
-// const pokeAbilities = (url) => {
-//   const abilities = document.getElementById("infoAbilities");
-//   abilities.innerHTML = url;
-// };
-
-// const pokeType = (url) => {
-//   const type = document.getElementById("infoType");
-//   type.innerHTML = url;
-// };
-
-// const pokeEvo = (url) => {
-//   const evolution = document.getElementById("infoEvo");
-//   evolution.innerHTML = url;
-// };
-
-// /////////////////////
-// // pokemon stats  //
-// ///////////////////
-
-// const pokeVida = (url) => {
-//   const vida = document.getElementById("infoVida");
-//   vida.innerHTML = url;
-// };
-
-// const pokeAtaque = (url) => {
-//   const ataque = document.getElementById("infoAtaque");
-//   ataque.innerHTML = url;
-// };
-
-// const pokeDefensa = (url) => {
-//   const defensa = document.getElementById("infoDefensa");
-//   defensa.innerHTML = url;
-// };
-
-// const pokeAtaqueEspecial = (url) => {
-//   const ataqueEspecial = document.getElementById("infoAtaqueEspecial");
-//   ataqueEspecial.innerHTML = url;
-// };
-
-// const pokeDefensaEspecial = (url) => {
-//   const defensaEspecial = document.getElementById("infoDefensaEspecial");
-//   defensaEspecial.innerHTML = url;
-// };
-
-// const pokeVelocidad = (url) => {
-//   const velocidad = document.getElementById("infoVelocidad");
-//   velocidad.innerHTML = url;
-// };
